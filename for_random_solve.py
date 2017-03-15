@@ -28,7 +28,7 @@ def border(n):
 def immod(funbuy, funsell):
     lbuy = 0
     lsell = 0
-    N = 1000000
+    N = 10000
     for i in range(N):
         print(i)
         z = random.lognormal(0.00571136544243, 0.0511839259556, 2)
