@@ -1,4 +1,3 @@
-import os
 import csv
 import numpy as np
 from numpy import histogram
@@ -12,7 +11,9 @@ Price = []
 #1.00054100832 0.0228230832541 day
 #1.00290208247 0.0560470621315 week
 #1.01056258987 0.0884489808817 mounth
-with open(os.path.join('data', 'SBER_090301_170301_w.csv')) as csvfile:
+#SBER_090301_170301_m
+#RI.MICEX LC  _090301_170301_m
+with open('SBER_090301_170301_m.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         Price.append(float(row['<CLOSE>']))
@@ -35,8 +36,8 @@ G = integrate(x ** (k-1) * exp (-x), (x, 0, +oo))
 print(G)
 f = (x ** (k - 1) * exp(-x / teta)) / (teta ** k * G)'''
 BIN = []
-for i in range(6):
-    BIN.append(E - (2.5 - i) * sko / 3)
+for i in range(36):
+    BIN.append(E - (18 - i) * sko / 6)
 print('otrezki = ', BIN)
 EMPIR = histogram(S, bins = BIN)[0]
 print('empiricheskie = ', EMPIR)

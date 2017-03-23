@@ -1,5 +1,6 @@
 import pylab as plt
 import numpy as np
+import seaborn
 
 X  = [1, 2, 3, 4]
 
@@ -16,13 +17,13 @@ Upr[1] = A[0] * 1.08 / (A[0] * 1.08 + (1-A[0]) * 1.04) - 0.695907193691130
 Upr[2] = A[1] * 1.08 / (A[1] * 1.08 + (1-A[1]) * 1.04) - 0.664645590242966
 Upr[3] = A[2] * 1.08 / (A[2] * 1.08 + (1-A[2]) * 1.04) - 0.476342348276703
 print(Upr)
-plt.rc('font',**{'family':'georgia'})
-plt.plot(X,Y1,lw=3, label='Верхняя граница', color='#2222ff')
-plt.plot(X,Y1,'ro', color='#2222ff')
-plt.plot(X,Y2,lw=3, label='Нижняя граница', color='#22ff22')
-plt.plot(X,A,lw=3, label='Актив', color='#ff2222')
-plt.plot(X,Y2,'ro', color='#22ff22')
-plt.fill_between(X, Y1,Y2,color='#44aa44',alpha=.5)
+plt.rc('font',**{'family':'Times new roman'})
+plt.plot(X,Y1,lw=4, label='Верхняя граница', color='#1111aa')
+plt.plot(X,Y1,'ro', color='#000066')
+plt.plot(X,Y2,lw=4, label='Нижняя граница', color='#11aa11')
+plt.plot(X,A,lw=4, label='Актив', color='#000000')
+plt.plot(X,Y2,'ro', color='#006600')
+plt.fill_between(X, Y1,Y2,color='#444444',alpha=.5)
 plt.ylabel('Доля рискового актива в портфеле')
 plt.xlabel('Номер шага')
 plt.legend(loc=3)

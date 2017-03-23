@@ -1,10 +1,9 @@
 from sympy import *
 from numpy import random
-import time
 
 a, l, m, r = symbols('A L M r')
-M = 0.3
-s = 1.03 ** (1 / 52)
+M = -71
+s = 1.051 ** (1 / 12)
 mu = 0.015
 lam = 0.015
 F = ((1 - a - (1 + lam) * l + (1 - mu) * m) * s + (a + l - m) * r) ** M
@@ -29,10 +28,10 @@ def border(n):
 def immod(funbuy, funsell):
     lbuy = 0
     lsell = 0
-    N = 1000
+    N = 15000
     for i in range(N):
         print(i)
-        z = random.lognormal(0.00571136544243, 0.0511839259556, 2)
+        z = random.lognormal(0.0210579525465, 0.108943832524, 2)
         FUNbuy = funbuy.subs(r, z[0])
         FUNsell = funsell.subs(r, z[1])
         A = FUNbuy.subs(a, 0)
@@ -74,8 +73,7 @@ def immod(funbuy, funsell):
     return(lbuy/N, lsell/N)
 
 
-start = time.time()
-UP, DOWN = border(1)
+
+UP, DOWN = border(3)
 print(UP[::-1])
 print(DOWN[::-1])
-print("--- %s seconds ---" % (time.time() - start))
