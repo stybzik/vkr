@@ -3,7 +3,7 @@ import numpy as np
 from numpy import histogram
 from sympy import *
 from scipy.stats import kstest
-
+import os
 
 
 a, b, x = symbols('a b x')
@@ -13,7 +13,7 @@ Price = []
 #1.01056258987 0.0884489808817 mounth
 #SBER_090301_170301_m
 #RI.MICEX LC  _090301_170301_m
-with open('SBER_090301_170301_m.csv') as csvfile:
+with open(os.path.join('data', 'SBER_090301_170301_w.csv')) as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         Price.append(float(row['<CLOSE>']))
